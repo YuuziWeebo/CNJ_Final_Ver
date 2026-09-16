@@ -1,0 +1,39 @@
+/*
+ * Custom cursor assets must be served from Spring Boot's static directory.
+ * Every declaration keeps a native fallback for browsers that reject .cur files.
+ */
+:root {
+  --tm-cursor-default: url('../img/cursor/01-normal-select_32-48-64.cur'), default;
+  --tm-cursor-help: url('../img/cursor/02-help-select_32-48-64.cur'), help;
+  --tm-cursor-progress: url('../img/cursor/03-working-in-background_32-48-64.cur'), progress;
+  --tm-cursor-wait: url('../img/cursor/04-busy_32-48-64.cur'), wait;
+  --tm-cursor-crosshair: url('../img/cursor/05-precision-select_32-48-64.cur'), crosshair;
+  --tm-cursor-text: url('../img/cursor/06-text-select_32-48-64.cur'), text;
+  --tm-cursor-handwriting: url('../img/cursor/07-handwriting_32-48-64.cur'), text;
+  --tm-cursor-not-allowed: url('../img/cursor/08-unavailable_32-48-64.cur'), not-allowed;
+  --tm-cursor-row-resize: url('../img/cursor/09-vertical-resize_32-48-64.cur'), row-resize;
+  --tm-cursor-col-resize: url('../img/cursor/10-horizontal-resize_32-48-64.cur'), col-resize;
+  --tm-cursor-nwse-resize: url('../img/cursor/11-diagonal-resize-1_32-48-64.cur'), nwse-resize;
+  --tm-cursor-nesw-resize: url('../img/cursor/12-diagonal-resize-2_32-48-64.cur'), nesw-resize;
+  --tm-cursor-move: url('../img/cursor/13-move_32-48-64.cur'), move;
+  --tm-cursor-alias: url('../img/cursor/14-alternate-select_32-48-64.cur'), alias;
+  --tm-cursor-pointer: url('../img/cursor/15-link-select_32-48-64.cur'), pointer;
+}
+
+html,
+body {
+  cursor: var(--tm-cursor-default);
+}
+
+:where(a, button, label, select, summary, [role='button'], [role='link']) {
+  cursor: var(--tm-cursor-pointer);
+}
+
+:where(input, textarea, [contenteditable='true']) {
+  cursor: var(--tm-cursor-text);
+}
+
+:where(button, input, select, textarea):disabled,
+[aria-disabled='true'] {
+  cursor: var(--tm-cursor-not-allowed);
+}

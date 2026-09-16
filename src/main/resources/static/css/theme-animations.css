@@ -1,0 +1,26 @@
+/* The new theme spreads outward from a different point on every toggle. */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 720ms;
+  animation-timing-function: linear;
+  animation-fill-mode: both;
+}
+
+::view-transition-old(root) { animation: none; }
+::view-transition-new(root) { z-index: 1; }
+
+html[data-theme-transition='random-spread']::view-transition-new(root) {
+  animation-name: theme-random-spread;
+}
+
+@keyframes theme-random-spread {
+  0% { clip-path: circle(0 at var(--theme-origin-x) var(--theme-origin-y)); }
+  42% { clip-path: circle(calc(var(--theme-radius) * 0.45) at var(--theme-origin-x) var(--theme-origin-y)); }
+  58% { clip-path: circle(calc(var(--theme-radius) * 0.55) at var(--theme-origin-x) var(--theme-origin-y)); }
+  100% { clip-path: circle(var(--theme-radius) at var(--theme-origin-x) var(--theme-origin-y)); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(root),
+  ::view-transition-new(root) { animation: none !important; }
+}

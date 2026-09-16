@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<body>
+<header th:fragment="header(userName, avatarUrl, avatarText)" class="dashboard-topbar">
+    <div class="dashboard-topbar-spacer" aria-hidden="true"></div>
+    <div class="dashboard-topbar-actions">
+    <button class="theme-toggle" type="button" data-theme-toggle aria-label="Chuyển sang giao diện tối" title="Đổi giao diện sáng/tối">
+        <i class="bi bi-moon-stars" aria-hidden="true"></i>
+    </button>
+    <a sec:authorize="isAuthenticated()" class="notification-bell" th:href="@{/notifications}"
+       th:attr="aria-label=${notificationUnreadCount > 0 ? 'Thông báo, ' + notificationUnreadCount + ' chưa đọc' : 'Thông báo'}">
+        <i class="bi bi-bell" aria-hidden="true"></i>
+        <span class="notification-badge" th:if="${notificationUnreadCount > 0}"
+              th:text="${notificationUnreadCount > 99 ? '99+' : notificationUnreadCount}">1</span>
+    </a>
+    <details class="user-menu dashboard-user-menu">
+        <summary class="user-menu-trigger" aria-label="Tùy chọn tài khoản">
+            <div class="dashboard-avatar">
+                        <img th:if="${currentAvatarUrl != null and !#strings.isEmpty(currentAvatarUrl)}"
+                                  th:src="${currentAvatarUrl}" alt="Ảnh đại diện">
+                        <span th:unless="${currentAvatarUrl != null and !#strings.isEmpty(currentAvatarUrl)}"
+                            th:text="${currentUserName != null ? #strings.substring(currentUserName, 0, 1).toUpperCase() : (avatarText != null ? avatarText : 'A')}">A</span>
+            </div>
+            <div class="dashboard-user-copy">
+                <div class="dashboard-user-name" th:text="${currentUserName != null ? currentUserName : userName}">Quản trị viên</div>
+                <div class="dashboard-user-role" th:text="${#authorization.expression('hasRole(''ADMIN'')')} ? 'Admin' : (${#authorization.expression('hasRole(''LECTURER'')')} ? 'Giảng viên' : 'Sinh viên')">Admin</div>
+            </div>
+            <i class="bi bi-chevron-down text-secondary"></i>
+        </summary>
+        <div class="user-menu-content">
+            <a sec:authorize="hasRole('STUDENT')" class="user-menu-item" th:href="@{/student/profile}"><i class="bi bi-person-circle"></i><span>Hồ sơ cá nhân</span></a>
+            <a sec:authorize="hasRole('LECTURER')" class="user-menu-item" th:href="@{/lecturer/profile}"><i class="bi bi-person-circle"></i><span>Hồ sơ cá nhân</span></a>
+            <a sec:authorize="hasRole('ADMIN')" class="user-menu-item" th:href="@{/admin/profile}"><i class="bi bi-person-circle"></i><span>Hồ sơ cá nhân</span></a>
+            <form method="post" th:action="@{/logout}">
+                <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}">
+                <button class="user-menu-item user-menu-logout" type="submit"><i class="bi bi-box-arrow-right"></i><span>Đăng xuất</span></button>
+            </form>
+        </div>
+    </details>
+    </div>
+</header>
+</body>
+</html>

@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --tm-cyan-50: #ecfeff;
+  --tm-cyan-100: #cffafe;
+  --tm-cyan-200: #a5f3fc;
+  --tm-cyan-300: #67e8f9;
+  --tm-cyan-400: #22d3ee;
+  --tm-cyan-500: #06b6d4;
+  --tm-cyan-600: #0891b2;
+  --tm-cyan-700: #0e7490;
+  --tm-cyan-800: #155e75;
+  --tm-cyan-900: #164e63;
+
+  --tm-ink: #0f2b33;
+  --tm-muted: #5b7480;
+  --tm-border: #d9eef2;
+  --tm-surface: #ffffff;
+  --tm-bg: #f2fafb;
+
+
+  /* Shared semantic palette */
+  --tm-text-strong: #0f172a;
+  --tm-text: #1e293b;
+  --tm-text-soft: #334155;
+  --tm-text-subtle: #475569;
+  --tm-text-muted: #64748b;
+  --tm-text-faint: #94a3b8;
+  --tm-surface-subtle: #f8fafc;
+  --tm-surface-muted: #f1f5f9;
+  --tm-surface-control: #fbfdff;
+  --tm-border-strong: #e2e8f0;
+  --tm-border-control: #dbe4ec;
+  --tm-focus-ring: rgba(6, 182, 212, 0.45);
+
+  --tm-success: #047857;
+  --tm-success-soft: #ecfdf5;
+  --tm-success-action: #0f9d6b;
+  --tm-success-strong: #0c7f56;
+  --tm-warning: #d97706;
+  --tm-warning-soft: #fffbeb;
+  --tm-danger: #e11d48;
+  --tm-danger-soft: #fff1f2;
+  --tm-danger-strong: #b3202f;
+  --tm-danger-border: #f6c4cb;
+
+  /* Typography scale shared by dashboards, forms and tables */
+  --tm-font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --tm-font-xs: 0.65rem;
+  --tm-font-caption: 0.68rem;
+  --tm-font-caption-sm: 0.66rem;
+  --tm-font-sm: 0.72rem;
+  --tm-font-body: 0.78rem;
+  --tm-font-control: 0.82rem;
+  --tm-font-body-lg: 0.84rem;
+  --tm-weight-medium: 500;
+  --tm-weight-semibold: 600;
+  --tm-weight-bold: 700;
+  --tm-weight-extrabold: 800;
+
+  /* Reused component spacing and geometry */
+  --tm-space-xs: 0.35rem;
+  --tm-space-sm: 0.55rem;
+  --tm-space-md: 0.85rem;
+  --tm-space-lg: 1.25rem;
+  --tm-radius-control: 0.45rem;
+  --tm-radius-sm: 0.55rem;
+  --tm-radius-md: 0.65rem;
+  --tm-radius-card: 0.75rem;
+  --tm-radius-lg: 0.8rem;
+  --tm-radius: 0.85rem;
+  --tm-radius-xl: 1.25rem;
+  --tm-radius-pill: 999px;
+  --tm-shadow-panel: 0 5px 20px rgba(15, 23, 42, 0.035);
+  --tm-shadow: 0 6px 24px -8px rgba(14, 116, 144, 0.18);
+  --tm-shadow-hover: 0 12px 32px -10px rgba(14, 116, 144, 0.28);
+
+  /* Role accent colors — single source of truth for per-role branding.
+     Values match the role badges already used in admin/users.html so the
+     sidebar/topbar accent for each role now agrees with the rest of the UI. */
+  --tm-role-student: #2563eb;
+  --tm-role-student-soft: #eff6ff;
+  --tm-role-admin: #0f766e;
+  --tm-role-admin-alt: #14b8a6;
+  --tm-role-admin-soft: #ccfbf1;
+  --tm-role-admin-surface: #f0fdfa;
+  --tm-role-admin-border: #99f6e4;
+  --tm-role-admin-highlight: #2dd4bf;
+  --tm-role-lecturer: #c2410c;
+  --tm-role-lecturer-alt: #ea580c;
+  --tm-role-lecturer-soft: #fff7ed;
+
+  --ui-bg: #f5f8fa;
+  --ui-surface: #ffffff;
+  --ui-surface-secondary: #f8fafb;
+  --ui-surface-hover: #f0fdfa;
+  --ui-text-primary: #12252b;
+  --ui-text-secondary: #496168;
+  --ui-text-muted: #71868c;
+  --ui-border: #dce7e9;
+  --ui-primary: #0f8f87;
+  --ui-primary-hover: #0b716b;
+  --ui-primary-soft: #e7f7f5;
+  --ui-success: #16805d;
+  --ui-warning: #b36a0c;
+  --ui-danger: #c43d4f;
+  --ui-radius-sm: 0.625rem;
+  --ui-radius-md: 0.75rem;
+  --ui-radius-lg: 0.875rem;
+  --ui-shadow-sm: 0 2px 10px rgba(18, 37, 43, 0.04);
+  --ui-shadow-md: 0 10px 28px rgba(18, 37, 43, 0.08);
+}
+
+:root[data-theme='dark'] {
+  --ui-bg: #0d171a;
+  --ui-surface: #142126;
+  --ui-surface-secondary: #19292e;
+  --ui-surface-hover: #173532;
+  --ui-text-primary: #edf7f6;
+  --ui-text-secondary: #bdd0d2;
+  --ui-text-muted: #8fa7ab;
+  --ui-border: #2a4046;
+  --ui-primary: #3cc4b8;
+  --ui-primary-hover: #64d8cf;
+  --ui-primary-soft: #153b39;
+  --ui-success: #55d39e;
+  --ui-warning: #f1b75d;
+  --ui-danger: #ff8794;
+  --ui-shadow-sm: 0 2px 12px rgba(0, 0, 0, 0.18);
+  --ui-shadow-md: 0 12px 32px rgba(0, 0, 0, 0.3);
+  --tm-surface: var(--ui-surface);
+  --tm-surface-subtle: var(--ui-bg);
+  --tm-surface-muted: var(--ui-surface-secondary);
+  --tm-surface-control: var(--ui-surface-secondary);
+  --tm-border: var(--ui-border);
+  --tm-border-strong: var(--ui-border);
+  --tm-border-control: var(--ui-border);
+  --tm-ink: var(--ui-text-primary);
+  --tm-text-strong: var(--ui-text-primary);
+  --tm-text: var(--ui-text-primary);
+  --tm-text-soft: var(--ui-text-secondary);
+  --tm-text-subtle: var(--ui-text-secondary);
+  --tm-text-muted: var(--ui-text-muted);
+  --tm-text-faint: var(--ui-text-muted);
+  --tm-muted: var(--ui-text-muted);
+  --tm-success-soft: #17382e;
+  --tm-warning-soft: #3a2c18;
+  --tm-danger-soft: #3c2027;
+  --tm-role-admin-soft: #153b39;
+  --tm-role-admin-surface: #122f2e;
+  --tm-role-admin-border: #2a625e;
+  --tm-role-lecturer-soft: #39271d;
+  --tm-role-student-soft: #172d4d;
+}

@@ -1,0 +1,16 @@
+@media (max-width: 767.98px) {
+  table.table {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .login-shell {
+    padding: 1rem;
+  }
+
+  .login-card {
+    padding: 2rem 1.25rem 1.5rem;
+    border-radius: var(--tm-radius-xl);
+  }
+}

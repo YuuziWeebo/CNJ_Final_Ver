@@ -1,0 +1,54 @@
+/* Form controls and dark-theme adaptations for shared panel components. */
+.status-badge::before { content: ''; width: 0.38rem; height: 0.38rem; margin-right: 0.4rem; border-radius: 50%; background: currentColor; }
+.status-badge { border: 1px solid color-mix(in srgb, currentColor 20%, transparent); }
+
+.lecturer-page .form-control,
+.lecturer-page .form-select,
+.student-page .form-control,
+.student-page .form-select {
+  border-color: var(--ui-border);
+  background: var(--ui-surface-secondary);
+  color: var(--ui-text-primary);
+}
+
+.lecturer-page .form-control:focus,
+.lecturer-page .form-select:focus,
+.student-page .form-control:focus,
+.student-page .form-select:focus {
+  border-color: var(--ui-primary);
+  background: var(--ui-surface);
+  box-shadow: 0 0 0 0.2rem color-mix(in srgb, var(--ui-primary) 18%, transparent);
+}
+
+:root[data-theme='dark'] .user-menu-content,
+:root[data-theme='dark'] .modal-content,
+:root[data-theme='dark'] .dropdown-menu {
+  border-color: var(--ui-border);
+  background: var(--ui-surface);
+  color: var(--ui-text-primary);
+}
+
+:root[data-theme='dark'] .btn-close { filter: invert(1) grayscale(1); }
+:root[data-theme='dark'] .text-secondary { color: var(--ui-text-muted) !important; }
+
+/* Bootstrap primitives inherit the same semantic surfaces in every role. */
+:root[data-theme='dark'] body:not(.login-page) { background: var(--ui-bg); color: var(--ui-text-primary); }
+:root[data-theme='dark'] .table {
+  --bs-table-bg: var(--ui-surface);
+  --bs-table-color: var(--ui-text-secondary);
+  --bs-table-border-color: var(--ui-border);
+  --bs-table-hover-bg: var(--ui-surface-hover);
+  --bs-table-hover-color: var(--ui-text-primary);
+}
+:root[data-theme='dark'] .pagination {
+  --bs-pagination-bg: var(--ui-surface);
+  --bs-pagination-color: var(--ui-primary);
+  --bs-pagination-border-color: var(--ui-border);
+  --bs-pagination-hover-bg: var(--ui-surface-hover);
+  --bs-pagination-hover-border-color: var(--ui-border);
+  --bs-pagination-disabled-bg: var(--ui-surface-secondary);
+  --bs-pagination-disabled-border-color: var(--ui-border);
+}
+:root[data-theme='dark'] .list-group-item,
+:root[data-theme='dark'] .card,
+:root[data-theme='dark'] .alert { border-color: var(--ui-border); background-color: var(--ui-surface); color: var(--ui-text-primary); }

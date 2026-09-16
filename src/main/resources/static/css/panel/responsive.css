@@ -1,0 +1,31 @@
+/* Responsive layout and motion accessibility overrides load last. */
+@media (max-width: 767.98px) {
+  .panel-heading-actions { width: 100%; justify-content: flex-start; }
+  .report-row { grid-template-columns: 1fr; }
+  .grading-form-grid { grid-template-columns: 1fr; }
+  .panel-filter { grid-template-columns: 1fr; }
+  .report-row-actions { min-width: 0; }
+  .user-menu-trigger { min-width: 0; }
+  .dashboard-user-copy { display: none; }
+  .notification-item { grid-template-columns: auto minmax(0, 1fr); }
+  .notification-item > form { grid-column: 2; }
+}
+
+@media (max-width: 575.98px) {
+  .lecturer-content, .student-content { padding: 1rem; }
+  .lecturer-page .admin-heading, .student-page .admin-heading { flex-direction: column; }
+  .panel-heading-actions > * { flex: 1 1 auto; justify-content: center; }
+  .report-row-head { flex-direction: column; }
+  .panel-list-row { align-items: flex-start; flex-direction: column; padding: 0.9rem 0; }
+  .notification-item-heading { align-items: flex-start; flex-direction: column; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .report-row:hover { transform: none; }
+}

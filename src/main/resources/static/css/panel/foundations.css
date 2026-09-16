@@ -1,0 +1,133 @@
+/* Panel shell, navigation, page headers, actions and surfaces. */
+.lecturer-page,
+.student-page {
+  background: var(--ui-bg);
+  color: var(--ui-text-primary);
+}
+
+.lecturer-page .lecturer-dashboard,
+.student-page .student-dashboard {
+  background: var(--ui-bg);
+}
+
+.lecturer-page .dashboard-sidebar,
+.student-page .dashboard-sidebar,
+.lecturer-page .dashboard-topbar,
+.student-page .dashboard-topbar {
+  background: var(--ui-surface);
+  border-color: var(--ui-border);
+}
+
+.dashboard-topbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.theme-toggle {
+  display: inline-grid;
+  width: 2.5rem;
+  height: 2.5rem;
+  place-items: center;
+  border: 1px solid var(--ui-border);
+  border-radius: 50%;
+  background: var(--ui-surface-secondary);
+  color: var(--ui-text-secondary);
+  cursor: pointer;
+  transition: color 180ms ease, border-color 180ms ease, background-color 180ms ease, transform 180ms ease;
+}
+
+.theme-toggle:hover {
+  border-color: var(--ui-primary);
+  background: var(--ui-primary-soft);
+  color: var(--ui-primary);
+}
+
+.theme-toggle:active,
+.panel-action:active { transform: scale(0.98); }
+
+.user-menu[open] .user-menu-content {
+  animation: panel-menu-in 180ms ease-out;
+  transform-origin: top right;
+}
+
+@keyframes panel-menu-in {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.lecturer-page .dashboard-nav-link.active,
+.student-page .dashboard-nav-link.active {
+  background: var(--ui-primary);
+  color: #fff;
+}
+
+.lecturer-page .dashboard-nav-link,
+.student-page .dashboard-nav-link {
+  transition: color 180ms ease, background-color 180ms ease;
+}
+
+.lecturer-page .admin-heading,
+.student-page .admin-heading { margin-bottom: 1.5rem; }
+
+.lecturer-page .admin-heading h1,
+.student-page .admin-heading h1 { color: var(--ui-text-primary); }
+
+.lecturer-page .admin-heading p,
+.student-page .admin-heading p { color: var(--ui-text-muted); }
+
+.panel-heading-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 0.65rem;
+}
+
+.lecturer-page .admin-primary-action,
+.lecturer-page .admin-secondary-action,
+.student-page .admin-primary-action,
+.student-page .admin-secondary-action,
+.panel-action {
+  min-height: 2.65rem;
+  padding: 0.65rem 0.9rem;
+  border-radius: var(--ui-radius-sm);
+  font-size: 0.8rem;
+  transition: color 180ms ease, border-color 180ms ease, background-color 180ms ease, box-shadow 180ms ease, transform 100ms ease;
+}
+
+.lecturer-page .admin-primary-action,
+.student-page .admin-primary-action,
+.panel-action-primary {
+  border: 1px solid var(--ui-primary);
+  background: var(--ui-primary);
+  color: #fff;
+  box-shadow: 0 5px 14px rgba(15, 143, 135, 0.16);
+}
+
+.lecturer-page .admin-primary-action:hover,
+.student-page .admin-primary-action:hover,
+.panel-action-primary:hover { background: var(--ui-primary-hover); color: #fff; }
+
+.lecturer-page .admin-secondary-action,
+.student-page .admin-secondary-action {
+  border-color: var(--ui-border);
+  background: var(--ui-surface);
+  color: var(--ui-text-secondary);
+}
+
+.lecturer-page .admin-secondary-action:hover,
+.student-page .admin-secondary-action:hover {
+  border-color: var(--ui-primary);
+  background: var(--ui-primary-soft);
+  color: var(--ui-primary);
+}
+
+.panel-surface,
+.lecturer-page .admin-form-panel,
+.student-page .admin-form-panel {
+  border: 1px solid var(--ui-border);
+  border-radius: var(--ui-radius-lg);
+  background: var(--ui-surface);
+  box-shadow: var(--ui-shadow-sm);
+}
+

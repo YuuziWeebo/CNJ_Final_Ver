@@ -1,0 +1,39 @@
+spring:
+  datasource:
+    url: ${DB_URL:jdbc:mysql://localhost:3306/thesis_management?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+     ddl-auto: update
+    open-in-view: false
+  thymeleaf:
+    cache: true
+  servlet:
+    multipart:
+      max-file-size: ${app.upload.report-max-size}
+      max-request-size: ${app.upload.report-max-request-size}
+
+server:
+  port: ${SERVER_PORT:8080}
+
+app:
+  upload-dir: ${APP_UPLOAD_DIR:uploads}
+  upload:
+    report-max-size: ${REPORT_MAX_SIZE:10MB}
+    report-max-request-size: ${REPORT_MAX_REQUEST_SIZE:11MB}
+    avatar-max-size: ${AVATAR_MAX_SIZE:2MB}
+
+grading:
+  supervisor-weight: ${GRADING_SUPERVISOR_WEIGHT:0.40}
+  council-weight: ${GRADING_COUNCIL_WEIGHT:0.60}
+
+---
+
+spring:
+  config:
+    activate:
+      on-profile: dev
+  thymeleaf:
+    cache: false

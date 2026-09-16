@@ -1,0 +1,335 @@
+# =========================================================
+# JAVA / MAVEN
+# =========================================================
+
+# Maven build output
+target/
+*.class
+
+# Maven generated files
+dependency-reduced-pom.xml
+release.properties
+
+# Maven wrapper - KEEP these tracked:
+# .mvn/wrapper/maven-wrapper.jar
+# mvnw
+# mvnw.cmd
+
+
+# =========================================================
+# IDE - INTELLIJ IDEA
+# =========================================================
+
+.idea/
+*.iml
+*.iws
+*.ipr
+out/
+
+# IntelliJ local configuration
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/usage.statistics.xml
+.idea/dictionaries/
+.idea/shelf/
+.idea/httpRequests/
+.idea/dataSources/
+.idea/dataSources.local.xml
+
+# IntelliJ compiler/cache
+*.class
+
+
+# =========================================================
+# ECLIPSE
+# =========================================================
+
+.classpath
+.project
+.settings/
+.factorypath
+.springBeans
+
+
+# =========================================================
+# VS CODE
+# =========================================================
+
+.vscode/
+!.vscode/extensions.json
+!.vscode/settings.example.json
+
+
+# =========================================================
+# NETBEANS
+# =========================================================
+
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+
+# =========================================================
+# SPRING BOOT / LOCAL CONFIG
+# =========================================================
+
+# Local environment configuration
+application-local.properties
+application-local.yml
+application-local.yaml
+
+application-dev-local.properties
+application-dev-local.yml
+application-dev-local.yaml
+
+application-secret.properties
+application-secret.yml
+application-secret.yaml
+
+
+# =========================================================
+# ENVIRONMENT / SECRETS
+# =========================================================
+
+.env
+.env.*
+!.env.example
+!.env.template
+
+# Credentials / private keys
+*.pem
+*.key
+*.p12
+*.pfx
+*.jks
+*.keystore
+
+# Cloud / service credentials
+credentials.json
+service-account.json
+google-credentials.json
+
+
+# =========================================================
+# DATABASE / LOCAL DATA
+# =========================================================
+
+# Database dumps / backups
+*.sql.bak
+*.sql.backup
+*.dump
+*.backup
+
+# Local database files
+*.db
+*.sqlite
+*.sqlite3
+
+# Database client files
+.idea/dataSources/
+.idea/dataSources.local.xml
+
+
+# =========================================================
+# LOGS
+# =========================================================
+
+*.log
+logs/
+log/
+*.log.*
+app.log
+server.log
+debug.log
+error.log
+
+
+# =========================================================
+# TEMPORARY / GENERATED FILES
+# =========================================================
+
+*.tmp
+*.temp
+*.bak
+*.swp
+*.swo
+*.orig
+*.old
+*.cache
+
+# OS temporary files
+*.pid
+*.seed
+*.pid.lock
+
+# Dependency classpath generated manually
+cp.txt
+
+# Temporary Java files
+Tmp*.java
+Test*.java
+
+
+# =========================================================
+# JAVA / JVM
+# =========================================================
+
+hs_err_pid*
+replay_pid*
+*.hprof
+.java-version
+
+
+# =========================================================
+# OS
+# =========================================================
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+[Dd]esktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Linux
+*~
+.directory
+
+
+# =========================================================
+# FRONTEND / NODE (IF USED)
+# =========================================================
+
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+.npm/
+.yarn/
+.pnpm-store/
+
+dist/
+build/
+
+# Frontend environment secrets
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+
+# =========================================================
+# COVERAGE / TEST REPORTS
+# =========================================================
+
+coverage/
+*.exec
+*.gcda
+*.gcno
+surefire-reports/
+failsafe-reports/
+
+
+# =========================================================
+# GENERATED DOCUMENTATION / REPORT OUTPUT
+# =========================================================
+
+# Uncomment if your project generates these locally
+# docs/generated/
+# reports/generated/
+
+
+# =========================================================
+# AI / COPILOT LOCAL FILES
+# =========================================================
+
+# GitHub Copilot cache / temporary files
+.github/copilot-instructions.local.md
+
+# Generic AI temporary files
+.ai/
+.ai-cache/
+.copilot/
+copilot-cache/
+
+# =========================================================
+# LOCAL SCRIPT OUTPUT
+# =========================================================
+
+*.out
+*.result
+*.response
+
+
+# =========================================================
+# BACKUPS
+# =========================================================
+
+*.orig
+*.rej
+
+# Editor backups
+*~
+.#*
+\#*\#
+
+
+# =========================================================
+# LOCAL CONFIG / MACHINE SPECIFIC
+# =========================================================
+
+local/
+.local/
+machine-local/
+BAO_CAO_PROJECT.md
+AGENTS.md
+*.ps1
+.agent/
+dev-seed-admin.sql
+
+# =========================================================
+# PROJECT / LOCAL ARTIFACTS
+# =========================================================
+
+# Runtime uploads
+uploads/
+
+# Local logs / runtime output
+app.err
+test-output.txt
+*.out
+*.result
+*.response
+
+# Temporary images / local test files
+tmp-*.png
+tmp-*.jpg
+tmp-*.jpeg
+tmp-*.webp
+
+# Local helper / debug source
+CheckHash.java
+
+# Project-specific docs/config that should stay local
+
+# AI / agent files
+.agent/
+.ai/
+.ai-cache/
+.copilot/
+copilot-cache/
+
+# Local scripts
+*.ps1

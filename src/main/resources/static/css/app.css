@@ -1,0 +1,10 @@
+/* Shared UI entrypoint: tokens -> base -> components -> forms -> role dashboards -> responsive. */
+@import url('_tokens.css?v=20260910.4');
+@import url('base.css?v=20260910.4');
+@import url('components.css?v=20260910.4');
+@import url('forms.css?v=20260910.4');
+@import url('dashboards.css?v=20260910.4');
+@import url('panel-system.css?v=20260910.4');
+@import url('theme-animations.css?v=20260910.4');
+@import url('responsive.css?v=20260910.4');
+@import url('cursors.css?v=20260910.4');

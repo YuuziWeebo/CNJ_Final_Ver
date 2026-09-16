@@ -1,0 +1,10 @@
+/*
+ * Panel design-system entrypoint.
+ * Keep this order stable: foundations -> reusable components -> page composition
+ * -> theme adaptations -> responsive/accessibility overrides.
+ */
+@import url('panel/foundations.css?v=20260910.4');
+@import url('panel/components.css?v=20260910.4');
+@import url('panel/pages.css?v=20260910.4');
+@import url('panel/theme.css?v=20260910.4');
+@import url('panel/responsive.css?v=20260910.4');

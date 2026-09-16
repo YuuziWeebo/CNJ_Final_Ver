@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<body>
+<aside th:fragment="sidebar(activePage, role)" class="dashboard-sidebar"
+       th:classappend="${role == 'ADMIN'} ? ' admin-sidebar' : (${role == 'LECTURER'} ? ' lecturer-sidebar' : ' student-sidebar')">
+<!--    <div class="dashboard-brand" th:classappend="${role == 'ADMIN'} ? ' admin-brand' : (${role == 'LECTURER'} ? ' lecturer-brand' : ' student-brand')">-->
+<!--        <div class="dashboard-brand-mark"-->
+<!--             th:classappend="${role == 'ADMIN'} ? ' admin-brand-mark' : (${role == 'LECTURER'} ? ' lecturer-brand-mark' : ' student-brand-mark')">-->
+<!--            <i th:if="${role == 'ADMIN'}" class="bi bi-shield-check"></i>-->
+<!--            <i th:if="${role == 'LECTURER'}" class="bi bi-mortarboard-fill"></i>-->
+<!--            <i th:if="${role == 'STUDENT'}" class="bi bi-mortarboard-fill"></i>-->
+<!--        </div>-->
+<!--        <div class="dashboard-brand-copy">-->
+<!--            <div class="dashboard-brand-title" th:text="${role == 'ADMIN'} ? 'ADMIN PANEL' : (${role == 'LECTURER'} ? 'LECTURER PANEL' : 'STUDENT PANEL')">PANEL</div>-->
+<!--            <div class="dashboard-brand-subtitle"-->
+<!--                 th:text="${role == 'ADMIN'} ? 'Quản trị hệ thống' : (${role == 'LECTURER'} ? 'Quản lý đề tài & giảng dạy' : 'Quản lý khóa luận / đồ án')">Hệ thống</div>-->
+<!--        </div>-->
+<!--    </div>-->
+
+    <div class="dashboard-sidebar-scroll"
+         th:classappend="${role == 'ADMIN'} ? ' admin-sidebar-scroll' : (${role == 'LECTURER'} ? ' lecturer-sidebar-scroll' : ' student-sidebar-scroll')">
+        <div class="dashboard-section-label" th:classappend="${role == 'ADMIN'} ? ' admin-section-label' : (${role == 'LECTURER'} ? ' lecturer-section-label' : ' student-section-label')">QUẢN LÝ</div>
+
+        <a sec:authorize="hasRole('STUDENT')" class="dashboard-nav-link" th:classappend="${activePage == 'home'} ? ' active' : ''" th:href="@{/home}"><i class="bi bi-house"></i><span>Trang chủ</span></a>
+        <a sec:authorize="hasRole('STUDENT')" class="dashboard-nav-link" th:classappend="${activePage == 'theses'} ? ' active' : ''" th:href="@{/student/theses}"><i class="bi bi-file-text"></i><span>Đề tài / Đồ án</span></a>
+        <a sec:authorize="hasRole('STUDENT')" class="dashboard-nav-link" th:classappend="${activePage == 'reports'} ? ' active' : ''" th:href="@{/student/reports}"><i class="bi bi-file-earmark-check"></i><span>Báo cáo</span></a>
+        <a sec:authorize="hasRole('STUDENT')" class="dashboard-nav-link" th:classappend="${activePage == 'grading'} ? ' active' : ''" th:href="@{/student/grading}"><i class="bi bi-award"></i><span>Kết quả &amp; điểm</span></a>
+        <a sec:authorize="hasRole('STUDENT')" class="dashboard-nav-link" th:classappend="${activePage == 'calendar'} ? ' active' : ''" th:href="@{/student/schedules/calendar}"><i class="bi bi-calendar3"></i><span>Lịch bảo vệ</span></a>
+
+        <a sec:authorize="hasRole('LECTURER')" class="dashboard-nav-link" th:classappend="${activePage == 'home'} ? ' active' : ''" th:href="@{/home}"><i class="bi bi-house"></i><span>Trang chủ</span></a>
+        <a sec:authorize="hasRole('LECTURER')" class="dashboard-nav-link" th:classappend="${activePage == 'theses'} ? ' active' : ''" th:href="@{/lecturer/theses}"><i class="bi bi-file-earmark-text"></i><span>Đề tài hướng dẫn</span></a>
+        <a sec:authorize="hasRole('LECTURER')" class="dashboard-nav-link" th:classappend="${activePage == 'registrations'} ? ' active' : ''" th:href="@{/lecturer/registrations}"><i class="bi bi-clipboard-check"></i><span>Đăng ký đề tài</span></a>
+        <a sec:authorize="hasRole('LECTURER')" class="dashboard-nav-link" th:classappend="${activePage == 'reports'} ? ' active' : ''" th:href="@{/lecturer/reports}"><i class="bi bi-file-earmark-check"></i><span>Duyệt báo cáo</span></a>
+        <a sec:authorize="hasRole('LECTURER')" class="dashboard-nav-link" th:classappend="${activePage == 'grading'} ? ' active' : ''" th:href="@{/lecturer/grading}"><i class="bi bi-pencil-square"></i><span>Chấm điểm</span></a>
+        <a sec:authorize="hasRole('LECTURER')" class="dashboard-nav-link" th:classappend="${activePage == 'calendar'} ? ' active' : ''" th:href="@{/lecturer/schedules/calendar}"><i class="bi bi-calendar3"></i><span>Lịch bảo vệ</span></a>
+
+        <a sec:authorize="hasRole('ADMIN')" class="dashboard-nav-link" th:classappend="${activePage == 'home'} ? ' active' : ''" th:href="@{/home}"><i class="bi bi-house"></i><span>Trang chủ</span></a>
+        <a sec:authorize="hasRole('ADMIN')" class="dashboard-nav-link" th:classappend="${activePage == 'users'} ? ' active' : ''" th:href="@{/admin/users}"><i class="bi bi-people"></i><span>Tài khoản</span></a>
+        <a sec:authorize="hasRole('ADMIN')" class="dashboard-nav-link" th:classappend="${activePage == 'councils'} ? ' active' : ''" th:href="@{/admin/councils}"><i class="bi bi-people-fill"></i><span>Hội đồng</span></a>
+        <a sec:authorize="hasRole('ADMIN')" class="dashboard-nav-link" th:classappend="${activePage == 'schedules'} ? ' active' : ''" th:href="@{/admin/schedules}"><i class="bi bi-calendar3"></i><span>Quản lý lịch</span></a>
+        <a sec:authorize="hasRole('ADMIN')" class="dashboard-nav-link" th:classappend="${activePage == 'calendar'} ? ' active' : ''" th:href="@{/admin/schedules/calendar}"><i class="bi bi-calendar-week"></i><span>Lịch bảo vệ</span></a>
+        <a sec:authorize="hasRole('ADMIN')" class="dashboard-nav-link" th:classappend="${activePage == 'audit-logs'} ? ' active' : ''" th:href="@{/admin/audit-logs}"><i class="bi bi-clock-history"></i><span>Nhật ký hệ thống</span></a>
+        <a sec:authorize="hasRole('ADMIN')" class="dashboard-nav-link" th:classappend="${activePage == 'exports'} ? ' active' : ''" th:href="@{/admin/exports}"><i class="bi bi-download"></i><span>Xuất dữ liệu</span></a>
+
+        <div class="dashboard-section-label" th:classappend="${role == 'ADMIN'} ? ' admin-section-label' : (${role == 'LECTURER'} ? ' lecturer-section-label' : ' student-section-label')">CÁ NHÂN</div>
+        <a sec:authorize="hasRole('STUDENT')" class="dashboard-nav-link" th:classappend="${activePage == 'profile'} ? ' active' : ''" th:href="@{/student/profile}"><i class="bi bi-person-circle"></i><span>Hồ sơ cá nhân</span></a>
+        <a sec:authorize="hasRole('LECTURER')" class="dashboard-nav-link" th:classappend="${activePage == 'profile'} ? ' active' : ''" th:href="@{/lecturer/profile}"><i class="bi bi-person-circle"></i><span>Hồ sơ cá nhân</span></a>
+        <a sec:authorize="hasRole('ADMIN')" class="dashboard-nav-link" th:classappend="${activePage == 'profile'} ? ' active' : ''" th:href="@{/admin/profile}"><i class="bi bi-person-circle"></i><span>Hồ sơ cá nhân</span></a>
+    </div>
+
+    <div class="dashboard-role-card" th:classappend="${role == 'ADMIN'} ? ' admin-role-card' : (${role == 'LECTURER'} ? ' lecturer-role-card' : ' student-role-card')">
+        <div class="dashboard-role-mark"
+             th:classappend="${role == 'ADMIN'} ? ' admin-role-mark' : (${role == 'LECTURER'} ? ' lecturer-role-mark' : ' student-role-mark')">
+            <i th:if="${role == 'ADMIN'}" class="bi bi-shield-lock"></i>
+            <i th:if="${role == 'LECTURER'}" class="bi bi-person-badge"></i>
+            <i th:if="${role == 'STUDENT'}" class="bi bi-people"></i>
+        </div>
+        <div>
+            <div class="dashboard-role-caption" th:classappend="${role == 'ADMIN'} ? ' admin-role-caption' : (${role == 'LECTURER'} ? ' lecturer-role-caption' : ' student-role-caption')">Vai trò hiện tại</div>
+            <div class="dashboard-role-name" th:classappend="${role == 'ADMIN'} ? ' admin-role-name' : (${role == 'LECTURER'} ? ' lecturer-role-name' : ' student-role-name')"
+                 th:text="${role == 'ADMIN'} ? 'Quản trị viên' : (${role == 'LECTURER'} ? 'Giảng viên' : 'Sinh viên')">Vai trò</div>
+        </div>
+    </div>
+</aside>
+</body>
+</html>
